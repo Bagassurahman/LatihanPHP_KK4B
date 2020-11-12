@@ -5,14 +5,6 @@ if(isset($_POST["login"])){
     $password = $_POST["password"];
 
     $result = mysqli_query($koneksi, "SELECT * FROM user WHERE username = '$username' AND password = '$password'");
-    
-    // if(mysqli_num_rows($result === 1)){
-    //     $row = mysqli_fetch_assoc($result);
-    //     if(password_verify($password, $row["password"])){
-    //         header("Location:array/index.php");
-    //         exit;
-    //     }
-    // }
 
     if(mysqli_num_rows($result) == 1){
 		header("Location:dashboard.php");
